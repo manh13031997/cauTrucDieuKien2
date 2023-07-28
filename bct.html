@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="employee-table">
+    <tr>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>9</th>
+    </tr>
+</table>
+
+<br>
+
+<script>
+
+    let a = 2;
+    let b = 0;
+    while (a < 10) {
+
+        for (let i = 0; i < 10; i++) {
+            console.log(a + " x " + i + " = " + a * i);
+            b = a * 1;
+        }
+
+
+        var table = document.getElementById("employee-table");
+        var rowCount = table.rows.length;
+        var cellCount = table.rows[0].cells.length;
+        var row = table.insertRow(rowCount);
+
+        var c;
+        var cell;
+
+        for (var i = 0; i < cellCount; i++) {
+            cell = row.insertCell(i);
+            c = i + 1;
+
+            var cArray = Array.from(c.toString());
+
+            var inputHTML = '';
+            cArray.forEach(function () {
+                inputHTML += c + ' x ' + a + ' = ' + a * c;
+            });
+            if (i >= 1) {
+                cell.innerHTML = '<input name="test" type="text" value="' + inputHTML + '"/>';
+
+            }
+        }
+
+        a = a + 1;
+
+
+    }
+
+</script>
+</body>
+</html>
